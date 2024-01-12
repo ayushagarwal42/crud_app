@@ -19,7 +19,7 @@ app.use(session({
     secret: "mysecretkey",
     saveUninitialized: true,
     resave: false,
-}))
+}));
 
 app.get('/', (req, res) => {
     res.send('hello World');
