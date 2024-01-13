@@ -1,8 +1,8 @@
 const express=require('express');
 const router=express.Router();
 
-router.get('/users',(req,res)=>{
-    res.send('all users');
+router.get('/',(req,res)=>{
+    res.render('index',{title:'HomePage'});
 });
 
 module.exports=router;
