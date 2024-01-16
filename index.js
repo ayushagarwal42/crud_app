@@ -21,17 +21,19 @@ app.use(session({
     resave: false,
 }));
 
-app.use((req,res,next)=>{
-    res.locals.message=req.session.message;
+app.use((req, res, next) => {
+    res.locals.message = req.session.message;
     delete req.session.message;
     next();
 });
 
+app.use(express.static('uploads'));
+
 //set tempelate engine
-app.set('view engine','ejs');
+app.set('view engine', 'ejs');
 
 // route prefix
-app.use("",require("./routes/routes"));
+app.use("", require("./routes/routes"));
 
 app.get('/', (req, res) => {
     res.send('hello World');
